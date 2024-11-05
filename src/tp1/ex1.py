@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
+
 from PIL import Image as PILImage
+
 
 class Dog:
     def __init__(self, name, age):
@@ -9,19 +11,23 @@ class Dog:
     def bark(self):
         return f"{self.name} says Woof!"
 
+
 my_dog = Dog("Buddy", 3)
 
+
 class Circle:
-    pi=3.14159
+    pi = 3.14159
 
     def __init__(self, radius):
-        self._radius=radius
+        self._radius = radius
 
     def area(self):
-        return Circle.pi*self._radius**2
+        return Circle.pi * self._radius**2
+
 
 circle = Circle(5)
 print(circle.area())
+
 
 class Image(ABC):
     def __init__(self, data):
@@ -69,12 +75,12 @@ class GreyScaleImage(Image):
 grayscale = GreyScaleImage([])
 print(grayscale.width)
 
-image = PILImage.open("../../images/stork.png")
+image = PILImage.open("../../images/input/stork.png")
 
 resized_image = image.resize((100, 100))
 
 rotated_image = image.rotate(45)
 
-rotated_image.save("../../images/updated_image.png")
+rotated_image.save("../../images/output/rotated_stork.png")
 
 print("toto")

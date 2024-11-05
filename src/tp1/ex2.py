@@ -1,13 +1,13 @@
 import numpy as np
 from PIL import Image
 
-image = Image.open("../../images/stork.png")
+image = Image.open("../../images/input/stork.png")
 image_data = np.array(image)
 
 print(image_data.shape)
 print("---------------------------")
 
-new_array = np.array([[1,2], [3,4]])
+new_array = np.array([[1, 2], [3, 4]])
 print(new_array * 2)
 print("---------------------------")
 
@@ -15,7 +15,7 @@ sequence_data = np.arange(2, 14)
 print(sequence_data)
 print(sequence_data.shape)
 print("---------------------------")
-sequence_data=sequence_data.reshape(6,2)
+sequence_data = sequence_data.reshape(6, 2)
 print(sequence_data)
 print(sequence_data.shape)
 print("---------------------------")
@@ -31,7 +31,4 @@ np.min(image_data)
 np.max(image_data)
 
 processed_image = Image.fromarray(image_data)
-processed_image.save("../../images/updated_image.png")
-
-
-
+processed_image.save("../../images/output/color_corrected_stork.png")
